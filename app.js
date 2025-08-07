@@ -10,6 +10,8 @@ import config from './config/config.js';
 
 // Import routes
 import indexRoutes from './routes/index.js';
+import storeRoutes from './routes/storeRoute.js'
+import planRoutes from "./routes/planRoute.js"
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/', indexRoutes);
+app.use('/store', storeRoutes);
+app.use('/plan', planRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
